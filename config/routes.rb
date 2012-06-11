@@ -9,6 +9,7 @@ SuaReforma::Application.routes.draw do
     get  "/cadastre-se", :action => :new,    :as => "new_provider"
     post "/providers", :action => :create
   end
+
   #resources :providers
 
 
