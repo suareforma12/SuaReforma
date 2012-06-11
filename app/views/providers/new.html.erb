@@ -1,5 +1,39 @@
-<h1>New provider</h1>
+<%= content_for :title do %> Cadastre-se - Sua Reforma <% end %>
 
-<%= render 'form' %>
+            <!-- HEADER -->
+            <div id="header">
+                <div class="wrapper">
+                    <div id="logo">
+                        <h1><%= link_to image_tag("logo.png", :alt => "Sua Reforma"), "/" %></h1>
+                    </div>
+                </div>
 
-<%= link_to 'Back', providers_path %>
+                <div id="barraForm">
+                    <div class="wrapper">
+                        <div id="cadastreseForm">
+					   <%= image_tag "cadastre-se-interna.png", :alt => "Cadastre-se grátis" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- / HEADER -->
+
+            <!-- CONTENT -->
+            <div id="content" class="noPad">
+                <div class="wrapper">
+                    <div id="esqForm">
+					<%= render 'form' %>
+				</div>
+                </div>
+            </div>
+            <!-- / CONTENT -->
+
+        <!-- JS -->
+        <script type="text/javascript">
+            $(function(){
+                $(".uniform").uniform();
+                $("#campoTelefone").mask("(99) 9999-9999");
+                $("#campoCep").mask("99999-999");
+            });
+        </script>
+        <!-- / JS -->

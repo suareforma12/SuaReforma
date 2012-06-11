@@ -11,3 +11,421 @@
  *= require_self
  *= require_tree .
  */
+
+*{
+    margin:0px;
+    padding:0px;
+    border:0px;
+}
+
+ul, ul li{ list-style-type:none; }
+
+a{ outline: none; text-decoration:none; }
+
+body{ background:#2a3642 url(bg-home.jpg) repeat-x center 0px; }
+
+.wrapper{
+    width:980px;
+    margin:0 auto;
+}
+
+.guardaInputT *{
+    float:left;
+}
+
+.guardaInputT input{
+    background:url("pixel-form.png") repeat-x 0px 0px;
+    padding:10px 0px 10px 0px;
+}
+
+#pre{
+    float:left;
+    width:100%;
+    height:auto;
+    padding-bottom:239px;
+}
+
+.floatLeft{ float:left; }
+
+#logo{
+    float:left;
+    padding:50px 0px 0px 75px;
+}
+
+#content{
+    float:left;
+    width:100%;
+    padding:85px 0px 0px 0px;
+}
+
+#contentLeft{
+    float:left;
+    width:50%;
+}
+
+#contentLeft #oMaior{
+    float:right;
+    width:360px;
+    padding:0px 0px 0px 0px;
+}
+
+#contentLeft #oMaior p{
+    float:left;
+    width:290px;
+    font-size:12px;
+    color:#fff;
+    padding:30px 0px 0px 45px;
+}
+
+#contentRight{
+    float:right;
+    width:45%;
+    height:302px;
+    background:url("pixel-cadastre.png") repeat-x 0px 0px;
+}
+
+#contentRight #guardaContentRight{
+    float:left;
+    width:331px;
+    padding:37px 0px 0px 36px;
+}
+
+#contentRight #guardaContentRight #cadastrese{
+    float:left;
+}
+
+#contentRight #guardaContentRight #cadastrese #imgCadastrese{
+    padding:0px 0px 28px 0px;
+}
+
+#contentRight #guardaContentRight #cadastrese #imgEhSimples{
+    padding:12px 0px 0px 65px;
+}
+
+#footer{
+    float:left;
+    width:100%;
+    height:239px;
+    background:url("bg-rodape.jpg") repeat-x center 0px;
+    display:inline;
+    margin:-239px 0px 0px 0px;
+}
+
+/* PRE CADASTRO */
+#barraForm{
+    float:left;
+    width:100%;
+    height:94px;
+    background:url("pixel-topo-form.gif") repeat-x 0px 0px;
+    display:inline;
+    margin:87px 0px 0px 0px;
+}
+
+#barraForm #cadastreseForm{
+    float:left;
+    padding:30px 0px 0px 110px;
+}
+
+#esqForm{
+    float:left;
+    width:435px;
+    padding:0px 0px 0px 130px;
+}
+
+#content.noPad{
+    padding-top:40px;
+}
+
+#esqForm span{
+    color:#fff;
+    font-family:'Arial';
+    font-size:16px;
+}
+
+#esqForm ul{
+    float:left;
+    width:100%;
+}
+
+#esqForm ul li{
+    float:left;
+    width:100%;
+    padding-bottom:35px;
+}
+
+#esqForm ul li.noPadBot{
+    padding-bottom:0px;
+}
+
+#esqForm span.small{
+    font-size:12px;
+    padding:0px 0px 0px 5px;
+}
+
+#esqForm .juridica{
+    display:none;
+}
+
+#esqForm .titulo{
+    font-family:'Arial';
+    font-size:18px;
+    font-weight:bold;
+    color:#d2c927;
+}
+
+#esqForm #campoNome{ width:415px; }
+#esqForm #campoEmail{ width:415px; }
+
+#esqForm #cidade,
+#esqForm #estado,
+#esqForm #numero,
+#esqForm #complemento,
+#esqForm #documentoContato,
+#esqForm #telefoneContato{
+    float:left;
+}
+
+#esqForm #cidade input,
+#esqForm #estado input,
+#esqForm #numero input,
+#esqForm #complemento input,
+#esqForm #documentoContato input,
+#esqForm #telefoneContato input{
+    width:192px;
+}
+
+#esqForm #cidade{ width:220px; }
+#esqForm #numero{ width:220px; }
+#esqForm #telefoneContato{ width:220px; }
+
+#esqForm .borderBottom{
+    width:430px;
+    float:left;
+    padding:0px 0px 10px 0px;
+    display:inline;
+    margin:0px 0px 20px 0px;
+    border-bottom:1px solid #38454f;
+}
+
+#esqForm #tipoPessoa .titulo{
+    font-size:20px;
+    float:left;
+    width:100%;
+    text-align:center;
+    padding:0px 0px 5px 0px;
+}
+
+#esqForm #tipoPessoa #guardaTipoPessoa{
+    float:left;
+    padding:0px 50px 45px 85px;
+}
+
+#esqForm #tipoPessoa #guardaTipoPessoa label{
+    float:left;
+    width:135px;
+    padding:0px 0px 0px 0px;
+}
+
+#esqForm #tipoPessoa #guardaTipoPessoa label input{ float:left; }
+
+#esqForm #tipoPessoa #guardaTipoPessoa label span{
+    float:left;
+    width:110px;
+    padding:0px 0px 0px 3px;
+    *padding-top:2px;
+}
+
+#esqForm .chamadaCep{
+    float:left;
+    width:100%;
+    height:25px;
+}
+
+#esqForm #campoCep{
+    width:194px;
+}
+
+#esqForm #btBuscarCep{
+    float:left;
+    position:relative;
+    z-index:1;
+    left:-20px;
+    top:0px;
+}
+
+#esqForm #naoSabeCep{
+    float:left;
+    font-family:"Arial";
+    font-size:11px;
+    text-decoration: underline;
+    color:#e0d635;
+    display:inline;
+    margin:10px 0px 0px -10px;
+}
+
+#esqForm #logradouro{
+    float:left;
+    width:100%;
+}
+
+#esqForm #logradouro #campoLogradouro{
+    width:415px;
+}
+
+#esqForm #servicosPrestados #lServicoPrestado{
+    float:left;
+    width:100%;
+}
+
+#esqForm #guardaServiosPrestados{
+    float:left;
+    padding:4px 0px 0px 4px;
+}
+
+#esqForm #guardaServiosPrestados label{
+    float:left;
+    width:100px;
+}
+
+#esqForm #funcoes{
+    float:left;
+    padding:10px 0px 0px 0px;
+}
+#esqForm #funcoes #lFuncoes{
+    float:left;
+    width:420px;
+}
+
+#esqForm #guardaFuncoes{
+    float:left;
+    padding:4px 0px 0px 4px;
+}
+
+#esqForm #guardaFuncoes label{
+    float:left;
+    width:140px;
+    height:20px;
+}
+
+#esqForm #guardaFuncoes label.clicado span{
+    color:#e0d635;
+}
+
+#esqForm #outraFuncao{
+    float:left;
+    width:100%;
+    padding:10px 0px 0px 0px;
+}
+
+#esqForm #outraFuncao #new_task,
+#esqForm #outraFuncao #campoOutraFuncao{ width:283px; padding-right:10px; }
+
+#esqForm #btAdicionarFunc{
+    position:relative;
+    left:-15px;
+    z-index:2;
+    width:122px;
+    height:40px;
+    background:url("bt-adicionar.png") no-repeat 0px 0px;
+}
+
+#esqForm #new_tasks,
+#esqForm #categoriasAdicionadas{
+    float:left;
+    width:100%;
+}
+
+#esqForm #new_tasks ul,
+#esqForm #categoriasAdicionadas ul{
+    float:left;
+    width:412px;
+    display:inline;
+    margin:0px 0px 0px 5px;
+}
+
+#esqForm #new_tasks ul li,
+#esqForm #categoriasAdicionadas ul li{
+    float:left;
+    width:100%;
+    padding:5px 0px 7px 0px;
+    border-bottom:1px solid #444d58;
+}
+
+#esqForm #new_tasks ul li p,
+#esqForm #categoriasAdicionadas ul li p{
+    float:left;
+    width:348px;
+    padding:0px 10px 0px 0px;
+    font-size:12px;
+    color:#9ab2ed;
+    font-family:"Arial";
+}
+
+#esqForm #new_tasks ul li .excluir,
+#esqForm #categoriasAdicionadas ul li .excluir{
+    float:right;
+    font-size:10px;
+    color:#9ab2ed;
+    font-family:"Arial";
+    display:inline;
+    margin:0px 14px 0px 0px;
+}
+
+#esqForm #avisoDescricao,
+#esqForm #avisoImagem{
+    font-size:10px;
+    color:#9ab2ed;
+    font-family:"Arial";
+    padding:0px 0px 0px 5px;
+}
+
+#esqForm #descricao{
+    float:left;
+    padding:15px 0px 0px 0px;
+}
+
+#esqForm #campoDescricao{
+    float:left;
+    width:415px;
+    height:75px;
+    padding:10px;
+    overflow:hidden;
+    background:url("bg-mensagem.png") no-repeat 0px 0px;
+}
+
+#esqForm #btEnviar{
+    float:left;
+    width:129px;
+    height:55px;
+    display:inline;
+    margin:0px 0px 0px 160px;
+    background:url("bt-enviar.png") no-repeat center bottom;
+}
+
+#esqForm #btEnviar:hover{ background-position:center -71px; }
+#esqForm #btEnviar:active{ background-position:center -1px; }
+
+#content.obrigado #contentLeft #oMaior p{
+    font-family:"Arial";
+    color:#fff;
+    font-size:18px;
+    float:left;
+    width:300px;
+    padding-left:220px;
+}
+
+#content.obrigado #contentRight{
+    background:none;
+}
+
+#content.obrigado #contentRight a#btVoltar{
+    float:left;
+    width:143px;
+    height:55px;
+    background:url("bt-voltar.png") no-repeat center -2px;
+    display:inline;
+    margin:55px 0px 0px 277px;
+}
+
+#content.obrigado #contentRight a#btVoltar:hover{ background-position:center -72px; }
+#content.obrigado #contentRight a#btVoltar:active{ background-position:center bottom; }

@@ -6,16 +6,17 @@ function add_task(){
   name_task  = $('#new_task').val();
   id_task    = 'task_'+num_tasks;
 
-  content = "<input type='hidden' name='new_tasks[]' value='"+name_task+"' />";
-  content += name_task;
-  content += "<span class='link-excluir'>";
-  content += "<a href='#' onclick=\"del_task('"+id_task+"');return false;\">excluir</a>";
-  content += "</span>";
+  content = "<li>";
+  content += "<input type='hidden' name='new_tasks[]' value='"+name_task+"' />";
+  content += "<p>"+name_task+"</p>";
+  content += "<a href='javascript:void(0);' class='excluir' onclick=\"del_task('"+id_task+"');return false;\"> x excluir</a>";
+  content += "</li>";
   $('<p>',{
     html : content,
     id   : id_task
-  }).appendTo("#new_tasks");
+  }).appendTo("#new_tasks ul");
   num_tasks++;
+  $('#new_task').val('');
 }
 function del_task(id){
   id = '#'+id;

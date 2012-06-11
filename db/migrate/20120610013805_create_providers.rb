@@ -8,6 +8,7 @@ class CreateProviders < ActiveRecord::Migration
       t.text :description
       t.string :type_service
       t.string :phone
+	 t.has_attached_file :logo
 
       t.timestamps
     end

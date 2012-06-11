@@ -1,1 +1,26 @@
-<h1>GANSO GAY \o/</h1>
+<%= content_for :title do %> Obrigado - Sua Reforma <% end %>
+
+            <!-- HEADER -->
+            <div id="header">
+                <div class="wrapper">
+                    <div id="logo">
+					<h1><%= link_to image_tag("logo.png", :alt => "Sua Reforma"), "/" %></h1>
+                    </div>
+                </div>
+            </div>
+            <!-- / HEADER -->
+
+            <!-- CONTENT -->
+            <div id="content" class="obrigado">
+                <div id="contentLeft">
+                    <div id="oMaior">
+				    <%= image_tag "cadastro-sucesso.png", :alt => "" %>
+                        <p>Em breve, você estará fazendo parte da maior rede online de reformas. </p>
+                        <p> Agradecemos a sua participação.</p>
+                    </div>
+                </div>
+                <div id="contentRight">
+				<%= link_to "", "/", :id => "btVoltar" %>
+                </div>
+            </div>
+            <!-- / CONTENT -->

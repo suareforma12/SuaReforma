@@ -1,26 +1,70 @@
 <%= provider.fields_for :adress_attributes do |a| %>
-  <div class="field">
-    <%= a.label :cep %><br />
-    <%= a.text_field :cep %>
-  </div>
-  <div class="field">
-    <%= a.label :street %><br />
-    <%= a.text_field :street %>
-  </div>
-  <div class="field">
-    <%= a.label :number %><br />
-    <%= a.text_field :number %>
-  </div>
-  <div class="field">
-    <%= a.label :complement %><br />
-    <%= a.text_field :complement %>
-  </div>
-  <div class="field">
-    <%= a.label :city %><br />
-    <%= a.text_field :city %>
-  </div>
-  <div class="field">
-    <%= a.label :state %><br />
-    <%= a.text_field :state %>
-  </div>
+  <label><span class="chamadaCep small">Digite abaixo o seu CEP e clique em BUSCAR</span></label>
+	<!-- CEP -->
+	<div id="cep">
+	    <label for="campoCep"><span class="small">CEP (xxxxx-xxx)</span></label>
+	    <div class="guardaInputT">
+		   <%= image_tag "esq-form.png", :alt => "" %>
+		   <%= a.text_field :cep, :id => 'campoCep' %>
+		   <%= image_tag "dir-form.png", :alt => "" %>
+	    </div>
+		<%= link_to image_tag("bt-buscar.png", :alt => "Buscar"), "javascript:void(0);", :id => "btBuscarCep" %>
+		<%= link_to "Não sabe o seu CEP?", "http://www.buscacep.correios.com.br/", :id => "naoSabeCep", :target => "_blank" %>
+	</div>
+	<!-- / CEP -->
+
+     <!-- LOGRADOURO -->
+     <div id="logradouro">
+         <label for="campoLogradouro"><span class="small">Logradouro:</span></label>
+         <div class="guardaInputT">
+             <%= image_tag "esq-form.png", :alt => "" %>
+		   <%= a.text_field :street, :id => "campoLogradouro" %>
+             <%= image_tag "dir-form.png", :alt => "" %>
+         </div>
+     </div>
+     <!-- / LOGRADOURO -->
+
+	<!-- NUMERO -->
+     <div id="numero">
+         <label for="campoNumero"><span class="small">Número</span></label>
+         <div class="guardaInputT">
+             <%= image_tag "esq-form.png", :alt => "" %>
+		   <%= a.text_field :number, :id => "campoNumero" %>
+             <%= image_tag "dir-form.png", :alt => "" %>
+         </div>
+     </div>
+     <!-- / NUMERO -->
+
+     <!-- COMPLEMENTO -->
+     <div id="complemento">
+         <label for="campoComplemento"><span class="small">Complemento</span></label>
+         <div class="guardaInputT">
+             <%= image_tag "esq-form.png", :alt => "" %>
+             <%= a.text_field :complement, :id => "campoComplemento" %>
+             <%= image_tag "dir-form.png", :alt => "" %>
+         </div>
+     </div>
+     <!-- / COMPLEMENTO -->
+
+     <!-- CIDADE -->
+     <div id="cidade">
+         <label for="campoCidade"><span class="small">Cidade</span></label>
+         <div class="guardaInputT">
+             <%= image_tag "esq-form.png", :alt => "" %>
+             <%= a.text_field :city, :id => "campoCidade" %>
+             <%= image_tag "dir-form.png", :alt => "" %>
+         </div>
+     </div>
+     <!-- / CIDADE -->
+
+     <!-- ESTADO -->
+     <div id="estado">
+         <label for="campoEstado"><span class="small">Estado</span></label>
+         <div class="guardaInputT">
+             <%= image_tag "esq-form.png", :alt => "" %>
+             <%= a.text_field :state, :id => "campoEstado" %>
+             <%= image_tag "dir-form.png", :alt => "" %>
+         </div>
+     </div>
+     <!-- / ESTADO -->
 <% end %>

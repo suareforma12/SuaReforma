@@ -1,4 +1,4 @@
-<%= form_for(@provider) do |f| %>
+<%= form_for @provider, :html => {:multipart => true} do |f| %>
   <% if @provider.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@provider.errors.count, "error") %> prohibited this provider from being saved:</h2>
@@ -10,46 +10,166 @@
       </ul>
     </div>
   <% end %>
+                            <ul>
+                                <li class="noPadBot">
+                                    <div id="tipoPessoa">
+                                        <span class="titulo">Selecione o tipo de cadastro</span>
+                                        <div id="guardaTipoPessoa">
+                                            <label>
+									   <%= radio_button "provider","type_person","fisica", :class => "uniform tipoPessoa" %>
+                                                <span>Pessoa física</span>
+                                            </label>
 
-  <div class="field">
-    <%= f.label :type_person %><br />
-    <%= radio_button "provider","type_person","fisica" %> Fisica
-    <%= radio_button "provider","type_person","juridica" %> Juridica
-  </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :document %><br />
-    <%= f.text_field :document %>
-  </div>
-  <hr />
-  Adress:<br />
-  <%= render "adress", :provider => f %>
-  <hr />
-  <div class="field">
-    <%= f.label :type_service %><br />
-    <%= radio_button "provider","type_service","reforma" %> Reforma
-    <%= radio_button "provider","type_service","construcao" %> Construção
-    <%= radio_button "provider","type_service","ambos" %> Ambos
-  </div>
-  <%= render "tasks", :tasks => @tasks %>
-  <input type="text" id="new_task" /><input type="button" onclick="add_task()" value="+ Adicionar" />
-  <div id="new_tasks"></div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+                                            <label>
+									   <%= radio_button "provider","type_person","juridica", :class => "uniform tipoPessoa" %>
+                                                <span>Pessoa juridica</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- DADOS CONTATO -->
+                                <li>
+                                    <span class="titulo borderBottom">1- Dados para contato</span>
+                                    <div id="guardaInfosContato">
+                                        <!-- NOME -->
+                                        <div id="nomeCompleto">
+                                            <label for="campoNome" class="fisica"><span class="small">Nome completo</span></label>
+                                            <label for="campoNome" class="juridica"><span class="small">Razão Social</span></label>
+                                            <div class="guardaInputT">
+                                                <%= image_tag "esq-form.png", :alt => "" %>
+									   <%= f.text_field :name, :id => "campoNome" %>
+                                                <%= image_tag "dir-form.png", :alt => "" %>
+                                            </div>
+                                        </div>
+                                        <!-- / NOME -->
+
+                                        <!-- EMAIL -->
+                                        <div id="emailContato">
+                                            <label for="campoEmail"><span class="small">E-mail para contato</span></label>
+                                            <div class="guardaInputT">
+                                                <%= image_tag "esq-form.png", :alt => "" %>
+									   <%= f.text_field :email, :id => "campoEmail" %>
+                                                <%= image_tag "dir-form.png", :alt => "" %>
+                                            </div>
+                                        </div>
+                                        <!-- / EMAIL -->
+
+                                        <!-- TELEFONE -->
+                                        <div id="telefoneContato">
+                                            <label for="campoTelefone"><span class="small">Telefone (xx xxxx-xxxx)</span></label>
+                                            <div class="guardaInputT">
+                                                <%= image_tag "esq-form.png", :alt => "" %>
+									   <%= f.text_field :phone, :id => "campoTelefone" %>
+                                                <%= image_tag "dir-form.png", :alt => "" %>
+                                            </div>
+                                        </div>
+                                        <!-- / TELEFONE -->
+
+                                        <!-- DOCUMENTO -->
+                                        <div id="documentoContato">
+                                            <label for="campoDocumento" class="fisica"><span class="small">CPF (xxx.xxx.xxx-xx)</span></label>
+                                            <label for="campoDocumento" class="juridica"><span class="small">CNPJ (xx.xxx.xxx/xxx-xx)</span></label>
+                                            <div class="guardaInputT">
+                                                <%= image_tag "esq-form.png", :alt => "" %>
+									   <%= f.text_field :document, :id => "campoDocumento" %>
+                                                <%= image_tag "dir-form.png", :alt => "" %>
+                                            </div>
+                                        </div>
+                                        <!-- / DOCUMENTO -->
+                                    </div>
+                                </li>
+                                <!-- / DADOS CONTATO -->
+
+                                <!-- LOCALIZACAO -->
+                                <li>
+                                    <span class="titulo borderBottom">2- Localização</span>
+                                    <div id="guardaInfosLocalizacao">
+								<%= render "adress", :provider => f %>
+                                    </div>
+                                </li>
+                                <!-- / LOCALIZACAO -->
+
+                                <!-- SERVICOS PRESTADOS -->
+                                <li>
+                                    <span class="titulo borderBottom">3- Serviços prestados</span>
+
+                                    <!-- TIPO SERVICOS PRESTADOS -->
+                                    <div id="servicosPrestados">
+                                        <label id="lServicoPrestado"><span class="small">Tipo de serviço prestado</span></label>
+                                        <div id="guardaServiosPrestados">
+                                            <label>
+									   <%= radio_button "provider","type_service","reforma", :class => "uniform servicoPrestado" %>
+                                                <span class="small">Reforma</span>
+                                            </label>
+                                            <label>
+									   <%= radio_button "provider","type_service","construcao", :class => "uniform servicoPrestado" %>
+                                                <span class="small">Construção</span>
+                                            </label>
+                                            <label>
+									   <%= radio_button "provider","type_service","ambos", :class => "uniform servicoPrestado" %>
+                                                <span class="small">Ambos</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- / TIPO SERVICOS PRESTADOS -->
+                                    
+                                    <!-- TIPO FUNCOES -->
+                                    <div id="funcoes">
+                                        <label id="lFuncoes"><span class="small">Selecione aqui as funções com qual trabalha:</span></label>
+                                        <div id="guardaFuncoes">
+								    <%= render "tasks", :tasks => @tasks %>
+                                        </div>
+                                    </div>
+                                    <!-- / TIPO FUNCOES -->
+
+                                    <!-- ADICIONAR OUTRA FUNCAO -->
+                                    <div id="outraFuncao">
+                                        <label for="campoOutraFuncao"><span class="small">Adicione outras funções:</span></label>
+                                        <div class="guardaInputT">
+                                            <%= image_tag "esq-form.png", :alt => "" %>
+                                            <input type="text" id="new_task" />
+                                            <%= image_tag "dir-form.png", :alt => "" %>
+                                        </div>
+								
+								<input type="button" onclick="add_task()" value="" id="btAdicionarFunc" />
+
+                                        <div id="new_tasks">
+                                            <ul>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- / ADICIONAR OUTRA FUNCAO -->
+                                </li>
+                                <!-- / SERVICOS PRESTADOS -->
+
+                                <!-- LOGOTIPO -->
+                                <li>
+                                    <span class="titulo borderBottom">4- Logotipo</span>
+                                    <!-- ADICIONAR LOGOTIPO -->
+                                    <div id="logotipo">
+                                        <label for="campoLogotipo"><span class="small">Selecione o arquivo com o logotipo da sua empresa</span></label>
+                                        <div class="guardaInputT">
+                                            <%= f.file_field :logo, :id => "campoLogotipo", :class => "uniform" %>
+                                        </div>
+                                        <span id="avisoImagem">Limite de 200Kb e tamanho máximo de 300x500px</span>
+                                    </div>
+                                    <!-- / ADICIONAR LOGOTIPO -->
+                                    
+                                    <!-- DESCRICAO -->
+                                    <div id="descricao">
+                                        <label for="campoDescricao"><span class="small">Descrição da empresa (máx 200 caracteres)</span></label>
+                                        <div class="guardaInputT">
+                                            <%= f.text_area :description, :id => "campoDescricao", :maxlength => 200 %>
+                                        </div>
+                                        <span id="avisoDescricao">200 caracteres restantes</span>
+                                    </div>
+                                    <!-- / DESCRICAO -->
+                                </li>
+                                <!-- / LOGOTIPO -->
+                                
+                                <li>
+							<%= link_to "", "javascript:void(0);", :id => "btEnviar" %>
+                                </li>
+                            </ul>
 <% end %>

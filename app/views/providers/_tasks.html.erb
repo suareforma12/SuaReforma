@@ -1,4 +1,6 @@
 <% tasks.each do |task| %>
-  <%= check_box_tag "provider[task_ids][]", task.id %>
-  <%= task.name %><br />
+  <label>
+	  <%= check_box_tag "provider[task_ids][]", task.id, false, :class => "uniform funcao" %>
+	  <span class="small"><%= task.name %></span>
+  </label>
 <% end %>
