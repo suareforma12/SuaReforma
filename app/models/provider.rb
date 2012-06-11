@@ -4,7 +4,6 @@ class Provider < ActiveRecord::Base
   has_and_belongs_to_many :tasks
   accepts_nested_attributes_for :adress
 
-  accepts_nested_attributes_for :logo
   has_attached_file :logo, :styles => {
     :medium => "300x300",
     :thumb  => "50x50#"
