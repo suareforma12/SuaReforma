@@ -1,0 +1,4 @@
+<% tasks.each do |task| %>
+  <%= check_box_tag "provider[task_ids][]", task.id %>
+  <%= task.name %><br />
+<% end %>

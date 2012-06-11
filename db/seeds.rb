@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+tasks = %w[Alvenaria Serralheria Pinturas\ e\ texturas Eletricidade Vidracaria Paisagismo Gesso Hidraulica]
+
+tasks.each do |task|
+  t = Task.new
+  t.name = task
+  t.pending = "N"
+  t.save
+end

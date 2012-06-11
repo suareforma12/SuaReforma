@@ -1,4 +1,17 @@
 SuaReforma::Application.routes.draw do
+  root :to => "pages#home"
+
+  controller :pages do
+    get "/", :action => :home
+    get "/obrigado", :action => :thank_you
+  end
+  controller :providers do
+    get  "/cadastre-se", :action => :new,    :as => "new_provider"
+    post "/providers", :action => :create
+  end
+  #resources :providers
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

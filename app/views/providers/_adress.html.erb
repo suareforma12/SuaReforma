@@ -1,0 +1,26 @@
+<%= provider.fields_for :adress_attributes do |a| %>
+  <div class="field">
+    <%= a.label :cep %><br />
+    <%= a.text_field :cep %>
+  </div>
+  <div class="field">
+    <%= a.label :street %><br />
+    <%= a.text_field :street %>
+  </div>
+  <div class="field">
+    <%= a.label :number %><br />
+    <%= a.text_field :number %>
+  </div>
+  <div class="field">
+    <%= a.label :complement %><br />
+    <%= a.text_field :complement %>
+  </div>
+  <div class="field">
+    <%= a.label :city %><br />
+    <%= a.text_field :city %>
+  </div>
+  <div class="field">
+    <%= a.label :state %><br />
+    <%= a.text_field :state %>
+  </div>
+<% end %>

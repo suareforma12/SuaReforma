@@ -1,0 +1,35 @@
+<h1>Listing providers</h1>
+
+<table>
+  <tr>
+    <th>Type person</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Document</th>
+    <th>Description</th>
+    <th>Type service</th>
+    <th>Phone</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @providers.each do |provider| %>
+  <tr>
+    <td><%= provider.type_person %></td>
+    <td><%= provider.name %></td>
+    <td><%= provider.email %></td>
+    <td><%= provider.document %></td>
+    <td><%= provider.description %></td>
+    <td><%= provider.type_service %></td>
+    <td><%= provider.phone %></td>
+    <td><%= link_to 'Show', provider %></td>
+    <td><%= link_to 'Edit', edit_provider_path(provider) %></td>
+    <td><%= link_to 'Destroy', provider, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Provider', new_provider_path %>
