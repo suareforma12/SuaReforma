@@ -8,7 +8,7 @@ class Provider < ActiveRecord::Base
     :medium => "300x300",
     :thumb  => "50x50#"
   }
-  validates_attachment_size :logo, :less_than => 3.megayte
+  validates_attachment_size :logo, :less_than => 3.megabyte
   validates_attachment_content_type :logo, :content_type => %w[image/png image/jpeg image/gif image/tiff]
 
 end
