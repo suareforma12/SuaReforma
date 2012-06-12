@@ -1,7 +1,7 @@
 class Task < ActiveRecord::Base
   attr_accessible :name
   has_and_belongs_to_many :providers
-  default_scope where(:pending => "N")
+  scope :pending, where(:pending => "N")
 
   def self.create_pending_tasks(tasks)
     ids = []

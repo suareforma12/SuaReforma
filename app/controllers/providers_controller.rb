@@ -26,7 +26,7 @@ class ProvidersController < ApplicationController
   # GET /providers/new.json
   def new
     @provider = Provider.new
-    @tasks = Task.scoped
+    @tasks = Task.pending
 
     respond_to do |format|
       format.html # new.html.erb
@@ -46,9 +46,7 @@ class ProvidersController < ApplicationController
 
     respond_to do |format|
       if @provider.save
-        new_task_ids = Task.create_pending_tasks params[:new_tasks] if params[:new_tasks]
-        new_task_ids ||= []
-        @provider.task_ids += new_task_ids
+        @provider.new_tasks_pending Task.create_pending_tasks params[:new_tasks]
         @provider.save
 
         format.html { redirect_to "/obrigado" }
