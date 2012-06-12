@@ -39,8 +39,8 @@ function getEndereco() {
       //Se o resultado for igual a 1
       if(resultadoCEP["resultado"] && resultadoCEP["bairro"] != ""){
         // troca o valor dos elementos
-        $("#campoLogradouro").val(unescape(resultadoCEP["tipo_logradouro"])+":"+unescape(resultadoCEP["logradouro"]));
-        //$("#bairro").val(unescape(resultadoCEP["bairro"]));
+        $("#campoLogradouro").val(unescape(resultadoCEP["tipo_logradouro"])+""+unescape(resultadoCEP["logradouro"]));        
+	//$("#bairro").val(unescape(resultadoCEP["bairro"]));
         $("#campoCidade").val(unescape(resultadoCEP["cidade"]));
         $("#campoEstado").val(unescape(resultadoCEP["uf"]));
         //$("#enderecoCompleto").show("slow");
@@ -58,3 +58,37 @@ function getEndereco() {
     //document.getElementById("load").style.display = 'none';
   }
 }
+
+/* MUDA PESSOA */
+    $(".tipoPessoa").change(function(){
+        if( $(".tipoPessoa").index(this) == 0 ){
+            $(".fisica").show()
+            $(".juridica").hide();
+            $("#campoDocumento").mask("999.999.999-99");
+        }else{
+            $(".fisica").hide()
+            $(".juridica").show();
+            $("#campoDocumento").mask("99.999.999/9999-99");
+        }
+        passa1 = true;
+    });
+    /* / MUDA PESSOA */
+
+/* MENSAGEM */
+    var carac = 200;
+    
+    $("#campoDescricao").keypress(function(){
+        carac--;
+        if( carac == 1 ){
+            $("#avisoDescricao").html( carac + " caracter restante" )
+        }else if( carac == 0 ){
+            $("#avisoDescricao").html( "Nenhum caracter restante" )
+            $("#campoDescricao").unbind('keypress');
+        }else{
+            $("#avisoDescricao").html( carac + " caracteres restantes" )
+        }
+        
+    });
+    /* / MENSAGEM */
+
+
