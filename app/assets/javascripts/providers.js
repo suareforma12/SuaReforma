@@ -5,7 +5,7 @@ var num_tasks = 0;
 function add_task(){
   name_task  = $('#new_task').val();
   id_task    = 'task_'+num_tasks;
-
+  if(name_task == "") return;
   content = "<li>";
   content += "<input type='hidden' name='new_tasks[]' value='"+name_task+"' />";
   content += "<p>"+name_task+"</p>";
@@ -40,7 +40,7 @@ function getEndereco() {
       //Se o resultado for igual a 1
       if(resultadoCEP["resultado"] && resultadoCEP["bairro"] != ""){
         // troca o valor dos elementos
-        $("#campoLogradouro").val(unescape(resultadoCEP["tipo_logradouro"])+" "+unescape(resultadoCEP["logradouro"]));        
+        $("#campoLogradouro").val(unescape(resultadoCEP["tipo_logradouro"])+" "+unescape(resultadoCEP["logradouro"]));
 	//$("#bairro").val(unescape(resultadoCEP["bairro"]));
         $("#campoCidade").val(unescape(resultadoCEP["cidade"]));
         $("#campoEstado").val(unescape(resultadoCEP["uf"]));
@@ -77,7 +77,7 @@ $(function(){
 
 /* MENSAGEM */
     var carac = 200;
-    
+
     $("#campoDescricao").keypress(function(){
         carac--;
         if( carac == 1 ){
@@ -88,7 +88,7 @@ $(function(){
         }else{
             $("#avisoDescricao").html( carac + " caracteres restantes" );
         }
-        
+
     });
 /* / MENSAGEM */
 });
