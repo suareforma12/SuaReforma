@@ -5,7 +5,7 @@ var num_tasks = 0;
 function add_task(){
   name_task  = $('#new_task').val();
   id_task    = 'task_'+num_tasks;
-  if(name_task == "") return;
+  if(name_task.length == 0) return;
   content = "<li>";
   content += "<input type='hidden' name='new_tasks[]' value='"+name_task+"' />";
   content += "<p>"+name_task+"</p>";
