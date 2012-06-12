@@ -8,7 +8,7 @@
 		   <%= a.text_field :cep, :id => 'campoCep' %>
 		   <%= image_tag "dir-form.png", :alt => "" %>
 	    </div>
-		<%= link_to image_tag("bt-buscar.png", :alt => "Buscar"), "javascript:void(0);", :id => "btBuscarCep" %>
+            <%= link_to image_tag("bt-buscar.png", :alt => "Buscar"), "javascript:void(0);", { :id => "btBuscarCep",:onclick => "getEndereco();" } %>
 		<%= link_to "Não sabe o seu CEP?", "http://www.buscacep.correios.com.br/", :id => "naoSabeCep", :target => "_blank" %>
 	</div>
 	<!-- / CEP -->
