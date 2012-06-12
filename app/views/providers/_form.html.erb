@@ -11,22 +11,22 @@
     </div>
   <% end %>
                             <ul>
-                                <li class="noPadBot">
+                              <li class="noPadBot">
+                                <div id="ErrorBox" style="display:none;color:#ffffff"></div>
                                     <div id="tipoPessoa">
                                         <span class="titulo">Selecione o tipo de cadastro</span>
                                         <div id="guardaTipoPessoa">
                                             <label>
-									   <%= radio_button "provider","type_person","fisica", :class => "uniform tipoPessoa" %>
-                                                <span>Pessoa física</span>
+                                                <%= radio_button "provider","type_person","fisica", :class => "uniform tipoPessoa" %>
+                                                <span>Pessoa fisica</span>
                                             </label>
-
                                             <label>
-									   <%= radio_button "provider","type_person","juridica", :class => "uniform tipoPessoa" %>
+						<%= radio_button "provider","type_person","juridica", :class => "uniform tipoPessoa" %>
                                                 <span>Pessoa juridica</span>
                                             </label>
                                         </div>
                                     </div>
-                                </li>
+                               </li>
 
                                 <!-- DADOS CONTATO -->
                                 <li>
@@ -113,7 +113,7 @@
                                         </div>
                                     </div>
                                     <!-- / TIPO SERVICOS PRESTADOS -->
-                                    
+
                                     <!-- TIPO FUNCOES -->
                                     <div id="funcoes">
                                         <label id="lFuncoes"><span class="small">Selecione aqui as funções com qual trabalha:</span></label>
@@ -131,7 +131,7 @@
                                             <input type="text" id="new_task" />
                                             <%= image_tag "dir-form.png", :alt => "" %>
                                         </div>
-								
+
 								<input type="button" onclick="add_task()" value="" id="btAdicionarFunc" />
 
                                         <div id="new_tasks">
@@ -155,7 +155,7 @@
                                         <span id="avisoImagem">Limite de 200Kb e tamanho máximo de 300x500px</span>
                                     </div>
                                     <!-- / ADICIONAR LOGOTIPO -->
-                                    
+
                                     <!-- DESCRICAO -->
                                     <div id="descricao">
                                         <label for="campoDescricao"><span class="small">Descrição da empresa (máx 200 caracteres)</span></label>
@@ -167,9 +167,11 @@
                                     <!-- / DESCRICAO -->
                                 </li>
                                 <!-- / LOGOTIPO -->
-                                
+
                                 <li>
-							<%= link_to "", "javascript:void(0);", :id => "btEnviar" %>
+                                  <%#= link_to "", "javascript:void(0);", :id => "btEnviar" %>
+                                  <%= submit_tag "" , :id => "btEnviar" %>
                                 </li>
                             </ul>
-<% end %>
+                          <% end %>
+                          <%= render "validates" %>

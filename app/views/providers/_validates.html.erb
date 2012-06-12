@@ -1,0 +1,38 @@
+<script type="text/javascript">
+  $(document).ready( function() {
+      $("#new_provider").validate({
+          errorContainer: "#ErrorBox",
+          errorLabelContainer: "#ErrorBox",
+          wrapper: "p",
+          rules:{
+              "provider[type_person]":{required: true },
+              "provider[name]":{required: true },
+              "provider[email]":{required: true },
+              "provider[phone]":{required: true },
+              "provider[document]":{required: true },
+              "provider[type_service]":{required: true },
+              "provider[description]":{required: true },
+              "provider[adress_attributes][cep]":{required: true },
+              "provider[adress_attributes][street]":{required: true },
+              "provider[adress_attributes][number]":{required: true },
+              "provider[adress_attributes][city]":{required: true },
+              "provider[adress_attributes][state]":{required: true }
+          },
+          messages:{
+             "provider[type_person]":">> O campo <b>TIPO DE PESSOA</b> é obrigatório",
+             "provider[name]":">> O campo <b>NOME</b> é obrigatório",
+             "provider[email]":">> O campo <b>EMAIL</b> é obrigatório",
+             "provider[phone]":">> O campo <b>TELEFONE</b> é obrigatório",
+             "provider[document]":">> O campo <b>CPF/CNPJ</b> é obrigatório",
+             "provider[type_service]":">> O campo <b>TIPO DE SERVIÇO</b> é obrigatório",
+             "provider[description]":">> O campo <b>DESCRIÇÃO</b> é obrigatório",
+             "provider[task_ids][]":">> Escolha ao menos uma <b>FUNÇÃO</b> com a qual trabalha",
+             "provider[adress_attributes][cep]":">> O campo <b>CEP</b> é obrigatório",
+             "provider[adress_attributes][street]":">> O campo <b>LOGRADOURO</b> é obrigatório",
+             "provider[adress_attributes][number]":">> O campo <b>NUMERO</b> é obrigatório",
+             "provider[adress_attributes][city]":">> O campo <b>CIDADE</b> é obrigatório",
+             "provider[adress_attributes][state]":">> O campo <b>ESTADO</b> é obrigatório"
+          }
+      });
+  });
+</script>
