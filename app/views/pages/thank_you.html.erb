@@ -1,10 +1,15 @@
 <%= content_for :title do %> Obrigado - Sua Reforma <% end %>
 
+<%= content_for :metatags do %>
+    <meta name="description" content="" />
+    <meta name="keywords" content="reforma construção pintura acabamento construir alvenaria eletricidade gesso serralheria vidracaria hidraulica paisagismo reformar construir" />
+<% end %>
+
             <!-- HEADER -->
             <div id="header">
                 <div class="wrapper">
                     <div id="logo">
-					<h1><%= link_to image_tag("logo.png", :alt => "Sua Reforma"), "/" %></h1>
+					<h1><%= link_to image_tag("logo.png", :alt => "Sua Reforma"), "/", :title => "Sua Reforma" %></h1>
                     </div>
                 </div>
             </div>
@@ -14,7 +19,7 @@
             <div id="content" class="obrigado">
                 <div id="contentLeft">
                     <div id="oMaior">
-				    <%= image_tag "cadastro-sucesso.png", :alt => "" %>
+				    <%= image_tag "cadastro-sucesso.png", :alt => "Cadastro efetuado com sucesso", :title => "Cadastro efetuado com sucesso" %>
                         <p>Em breve, você estará fazendo parte da maior rede online de reformas. </p>
                         <p> Agradecemos a sua participação.</p>
                     </div>

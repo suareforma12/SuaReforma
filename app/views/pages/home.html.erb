@@ -1,9 +1,15 @@
 <%= content_for :title do %> Sua Reforma <% end %>
+
+<%= content_for :metatags do %>
+    <meta name="description" content="" />
+    <meta name="keywords" content="reforma construção pintura acabamento construir alvenaria eletricidade gesso serralheria vidracaria hidraulica paisagismo reformar construir" />
+<% end %>
+
             <!-- HEADER -->
             <div id="header">
                 <div class="wrapper">
                     <div id="logo">
-                        <h1><%= link_to image_tag("logo.png", :alt => "Sua Reforma"), "/" %></h1>
+                        <h1><%= link_to image_tag("logo.png", :alt => "Sua Reforma"), "/", :title => "Sua Reforma" %></h1>
                     </div>
                 </div>
             </div>
@@ -13,7 +19,7 @@
             <div id="content">
 			<div id="contentLeft">
                     <div id="oMaior">
-			         <%= image_tag "texto-institucional.png", :alt => "O maior site de reformas, está chegando" %>
+			         <%= image_tag "texto-institucional.png", :alt => "O maior site de reformas, está chegando", :title => "O maior site de reformas está chegando" %>
                         <p>Se você é um profissional do ramo de contruções e reformas, cadastre-se gratuitamente e seja um dos primeiros a trabalhar com o maior portal de reformas do Brasil.</p>
                     </div>
                 </div>
@@ -21,9 +27,9 @@
 			     <%= image_tag "borda-cadastre.gif", :alt => "", :class => "floatLeft" %>
                     <div id="guardaContentRight">
                         <div id="cadastrese">
-					   <%= image_tag "cadastre-se.png", :alt => "Cadastre-se grátis", :id => "imgCadastrese" %>
-					   <%= link_to image_tag("clique.png", :alt => "Clique e faça seu cadastro"),new_provider_path %>
-					   <%= image_tag "simples.png", :alt => "é simples, é rápido", :id => "imgEhSimples" %>
+					   <%= image_tag "cadastre-se.png", :alt => "Cadastre-se grátis", :id => "imgCadastrese", :title => "Cadastre-se grátis" %>
+					   <%= link_to image_tag("clique.png", :alt => "Clique e faça seu cadastro"),new_provider_path, :title => "Clique e faça seu cadastro" %>
+					   <%= image_tag "simples.png", :alt => "é simples, é rápido", :id => "imgEhSimples", :title => "é simples, é rápido" %>
                         </div>
                     </div>
                 </div>
