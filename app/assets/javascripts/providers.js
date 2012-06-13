@@ -6,12 +6,12 @@ function add_task(){
   name_task  = $('#new_task').val();
   id_task    = 'task_'+num_tasks;
   if(name_task.length == 0) return;
-  content = "<li>";
+  content = "";
   content += "<input type='hidden' name='new_tasks[]' value='"+name_task+"' />";
   content += "<p>"+name_task+"</p>";
   content += "<a href='javascript:void(0);' class='excluir' onclick=\"del_task('"+id_task+"');return false;\"> x excluir</a>";
-  content += "</li>";
-  $('<p>',{
+  content += "";
+  $('<li>',{
     html : content,
     id   : id_task
   }).appendTo("#new_tasks ul");
@@ -35,7 +35,7 @@ function getEndereco() {
    *  Estou chamando a url do serviço passando o parâmetro "formato=javascript" e o CEP digitado no formulário
    *  http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#cep").val()
    */
-    $.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#campoCep").val(),function(){
+    $.getScript("http://cep.caosdevelopers.com/web_cep.php?cep"+$("#campoCep").val(),function(){
       // o getScript dá um eval no script, então é só ler!
       //Se o resultado for igual a 1
       if(resultadoCEP["resultado"] && resultadoCEP["bairro"] != ""){
