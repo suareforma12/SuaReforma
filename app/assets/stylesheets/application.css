@@ -379,6 +379,13 @@ body{ background:#2a3642 url(bg-home.jpg) repeat-x center 0px; }
     padding:0px 0px 0px 5px;
 }
 
+#esqForm #avisoDescricao span#caracs{
+    font-size:10px;
+    color:#9ab2ed;
+    font-family:"Arial";
+    padding:0px 0px 0px 0px;
+}
+
 #esqForm #descricao{
     float:left;
     padding:15px 0px 0px 0px;
