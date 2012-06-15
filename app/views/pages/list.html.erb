@@ -17,9 +17,11 @@
   <% end %>
   Categorias cadastradas:<br />
   <% @tasks.each do |c| %>
-    <%= c.name %>
+    <%= c.name %><br />
   <% end %>
+  <br />
+  Categorias Pendentes:<br />
   <% @tasks_pending.each do |c| %>
-    <%= c.name %>
+    <%= c.name %><br />
   <% end %>
 <div>
