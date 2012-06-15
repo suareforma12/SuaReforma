@@ -8,5 +8,7 @@ class PagesController < ApplicationController
 
   def list
     @providers = Provider.order("id DESC")
+    @tasks = Task.where("pending = 'N'")
+    @tasks_pending = Task.where("pending = 'S'")
   end
 end

@@ -12,7 +12,14 @@
       <%= p.adress.street %>, Num: <%= p.adress.number %>, Comp: <%= p.adress.complement %><br />
       CEP:<%= p.adress.cep %>, Cidade: <%= p.adress.city %>, Estado: <%= p.adress.state %><br />
       <%= p.created_at.to_s :time %>
-      <br /><br />
-      </p>
+      <br /><hr /><br />
+    </p>
+  <% end %>
+  Categorias cadastradas:<br />
+  <% @tasks.each do |c| %>
+    <%= c.name %>
+  <% end %>
+  <% @tasks_pending.each do |c| %>
+    <%= c.name %>
   <% end %>
 <div>
