@@ -75,7 +75,7 @@ $(function(){
     });
 /* / MUDA PESSOA */
 
-/* MENSAGEM */
+/* MENSAGEM /
     var carac = 200;
 
     $("#campoDescricao").keypress(function(){
@@ -91,4 +91,6 @@ $(function(){
 
     });
 /* / MENSAGEM */
+
+$("#guardaTipoPessoa label:eq(0) input").trigger("click");
 });
