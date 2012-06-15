@@ -1,6 +1,6 @@
 /.bundle
 /log/*.log
 /tmp
-*.swp
+*.sw*
 *.*~
 config/database.yml
