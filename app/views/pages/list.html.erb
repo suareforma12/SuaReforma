@@ -21,9 +21,11 @@
 <div>
   <h1 style="color:#fc0;">Cadastrados</h1>
   <% @providers.each do |p| %>
-    <p style="padding-bottom:10px;">
+    <p style="padding-bottom:15px; padding-right:20px; border-bottom:1px solid #ccc;">
 
       <%= image_tag p.logo.url :medium %>
+	 <br/>
+
       <strong>Tipo de Pessoa:</strong> <%= p.type_person %> <br/>
 	 <strong>CPF/CNPJ:</strong> <%= p.document %><br />
 	 <br />
@@ -38,27 +40,33 @@
 	 <br/>
 
       <strong>Tipo de Serviço:</strong> <%= p.type_service %><br />
-	 <strong>Funções:</strong>
+	 <strong>Funções:</strong><br/>
       <%= p.tasks.map { |t| t.name }.join ", " %><br/>
-	 
+	 <br/>
+
 	 <strong>Endereço:</strong><br />
       <%= p.adress.street %>, <strong>Nº:</strong> <%= p.adress.number %>, <strong>Comp:</strong> <%= p.adress.complement %><br />
       <strong>CEP:</strong> <%= p.adress.cep %><br/>
 	 <strong>Cidade:</strong> <%= p.adress.city %>, <%= p.adress.state %><br />
+	 <br/>
 
 	 <strong>Cadastro realizado em:</strong> <br/>
       <%= p.created_at.to_s :time %>
     </p>
   <% end %>
-  Categorias cadastradas:<br />
-  <% @tasks.each do |c| %>
-    <%= c.name %><br />
-  <% end %>
-  <br />
-  Categorias Pendentes:<br />
-  <% @tasks_pending.each do |c| %>
-    <%= c.name %><br />
-  <% end %>
+
+	<p>
+	  <strong style="color:#fc0;">Categorias cadastradas:</strong><br />
+	  <% @tasks.each do |c| %>
+	    <%= c.name %>, 
+	  <% end %>
+	  <br /><br/>
+
+	  <strong style="color:#fc0;">Categorias Pendentes:</strong><br />
+	  <% @tasks_pending.each do |c| %>
+	    <%= c.name %>, 
+	  <% end %>
+	</p>
 </div>
 
 </div>
