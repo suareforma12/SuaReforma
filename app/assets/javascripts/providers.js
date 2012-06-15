@@ -35,7 +35,7 @@ function getEndereco() {
    *  Estou chamando a url do serviço passando o parâmetro "formato=javascript" e o CEP digitado no formulário
    *  http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#cep").val()
    */
-    $.getScript("http://cep.caosdevelopers.com/web_cep.php?cep"+$("#campoCep").val(),function(){
+    $.getScript("http://m.correios.com.br/movel/buscaCepConfirma.do?cep"+$("#campoCep").val(),function(){
       // o getScript dá um eval no script, então é só ler!
       //Se o resultado for igual a 1
       if(resultadoCEP["resultado"] && resultadoCEP["bairro"] != ""){
