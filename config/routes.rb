@@ -9,7 +9,9 @@ SuaReforma::Application.routes.draw do
     get  "/cadastre-se", :action => :new,    :as => "new_provider"
     post "/providers", :action => :create
   end
-
+  controller :pages do
+    get "/elvis-o-rei", :action => :list
+  end
   #resources :providers
 
 
