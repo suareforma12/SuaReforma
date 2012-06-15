@@ -1,17 +1,18 @@
 <div style="background:#FFFFFF;padding:20px;">
-<h1>Elvis The King</h1>
-<hr />
-<% @providers.each do |p| %>
-  <%= image_tag p.logo.url :thumb %><br />
-  Tipo de Pessoa: <%= p.type_person %>,CPF/CNPJ: <%= p.document %><br />
-  Nome: <%= p.name %>,Tel: <%= p.phone %>, Email: <%= p.email %><br />
-  Descrição: <%= p.description %><br />
-  Tipo de Serviço: <%= p.type_service %><br />
-  <%= p.tasks.map { |t| t.name }.join ", " %><br />
-  Endereço:<br />
-  <%= p.adress.street %>, Num: <%= p.adress.number %>, Comp: <%= p.adress.complement %><br />
-  CEP:<%= p.adress.cep %>, Cidade: <%= p.adress.city %>, Estado: <%= p.adress.state %><br />
-  <%= p.created_at.to_s :time %>
-  <hr />
-<% end %>
+  <h1>Elvis The King</h1>
+  <% @providers.each do |p| %>
+    <p>
+      <%= image_tag p.logo.url :medium %><br />
+      Tipo de Pessoa: <%= p.type_person %>,CPF/CNPJ: <%= p.document %><br />
+      Nome: <%= p.name %>,Tel: <%= p.phone %>, Email: <%= p.email %><br />
+      Descrição: <%= p.description %><br />
+      Tipo de Serviço: <%= p.type_service %><br />
+      <%= p.tasks.map { |t| t.name }.join ", " %><br />
+      Endereço:<br />
+      <%= p.adress.street %>, Num: <%= p.adress.number %>, Comp: <%= p.adress.complement %><br />
+      CEP:<%= p.adress.cep %>, Cidade: <%= p.adress.city %>, Estado: <%= p.adress.state %><br />
+      <%= p.created_at.to_s :time %>
+      <br /><br />
+      </p>
+  <% end %>
 <div>
