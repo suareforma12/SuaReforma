@@ -1,18 +1,53 @@
-<div style="background:#FFFFFF;padding:20px;">
-  <h1>Elvis The King</h1>
+<%= content_for :title do %> Cadastrados - Sua Reforma <% end %>
+
+<%= content_for :metatags do %>
+    <meta name="robots" content="noindex, nofollow">
+<% end %>
+
+<!-- HEADER -->
+            <div id="header">
+                <div class="wrapper">
+                    <div id="logo">
+                        <%= link_to image_tag("logo.png", :alt => "Sua Reforma"), "/", :title => "Sua Reforma" %>
+                    </div>
+                </div>
+            </div>
+            <!-- / HEADER -->
+
+<div id="content">
+			<div id="contentLeft">
+				<div id="oMaior">			
+
+<div>
+  <h1 style="color:#fc0;">Cadastrados</h1>
   <% @providers.each do |p| %>
-    <p>
-      <%= image_tag p.logo.url :medium %><br />
-      Tipo de Pessoa: <%= p.type_person %>,CPF/CNPJ: <%= p.document %><br />
-      Nome: <%= p.name %>,Tel: <%= p.phone %>, Email: <%= p.email %><br />
-      Descrição: <%= p.description %><br />
-      Tipo de Serviço: <%= p.type_service %><br />
-      <%= p.tasks.map { |t| t.name }.join ", " %><br />
-      Endereço:<br />
-      <%= p.adress.street %>, Num: <%= p.adress.number %>, Comp: <%= p.adress.complement %><br />
-      CEP:<%= p.adress.cep %>, Cidade: <%= p.adress.city %>, Estado: <%= p.adress.state %><br />
+    <p style="padding-bottom:10px;">
+
+      <%= image_tag p.logo.url :medium %>
+      <strong>Tipo de Pessoa:</strong> <%= p.type_person %> <br/>
+	 <strong>CPF/CNPJ:</strong> <%= p.document %><br />
+	 <br />
+
+      <strong>Nome:</strong> <%= p.name %><br/>
+	 <strong>Telefone:</strong> <%= p.phone %><br/>
+	 <strong>E-mail:</strong> <%= p.email %><br />
+	 <br/>
+
+      <strong>Descrição:</strong><br/>
+	 <%= p.description %><br/>
+	 <br/>
+
+      <strong>Tipo de Serviço:</strong> <%= p.type_service %><br />
+	 <strong>Funções:</strong>
+      <%= p.tasks.map { |t| t.name }.join ", " %><br/>
+	 
+	 <strong>Endereço:</strong><br />
+      <%= p.adress.street %>, <strong>Nº:</strong> <%= p.adress.number %>, <strong>Comp:</strong> <%= p.adress.complement %><br />
+      <strong>CEP:</strong> <%= p.adress.cep %><br/>
+	 <strong>Cidade:</strong> <%= p.adress.city %>, <%= p.adress.state %><br />
+
+	 <strong>Cadastro realizado em:</strong> <br/>
       <%= p.created_at.to_s :time %>
-      <br /><hr /><br />
     </p>
   <% end %>
   Categorias cadastradas:<br />
@@ -24,4 +59,8 @@
   <% @tasks_pending.each do |c| %>
     <%= c.name %><br />
   <% end %>
-<div>
+</div>
+
+</div>
+</div>
+</div>
