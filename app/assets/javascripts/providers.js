@@ -6,12 +6,12 @@ function add_task(){
   name_task  = $('#new_task').val();
   id_task    = 'task_'+num_tasks;
   if(name_task.length == 0) return;
-  content = "<li>";
+  content = "";
   content += "<input type='hidden' name='new_tasks[]' value='"+name_task+"' />";
   content += "<p>"+name_task+"</p>";
   content += "<a href='javascript:void(0);' class='excluir' onclick=\"del_task('"+id_task+"');return false;\"> x excluir</a>";
-  content += "</li>";
-  $('<p>',{
+  content += "";
+  $('<li>',{
     html : content,
     id   : id_task
   }).appendTo("#new_tasks ul");
@@ -38,14 +38,18 @@ function getEndereco() {
     $.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#campoCep").val(),function(){
       // o getScript dá um eval no script, então é só ler!
       //Se o resultado for igual a 1
-      if(resultadoCEP["resultado"] && resultadoCEP["bairro"] != ""){
+      if(resultadoCEP["resultado"] ){
         // troca o valor dos elementos
         $("#campoLogradouro").val(unescape(resultadoCEP["tipo_logradouro"])+" "+unescape(resultadoCEP["logradouro"]));
 	//$("#bairro").val(unescape(resultadoCEP["bairro"]));
         $("#campoCidade").val(unescape(resultadoCEP["cidade"]));
         $("#campoEstado").val(unescape(resultadoCEP["uf"]));
         //$("#enderecoCompleto").show("slow");
-        $("#campoNumero").focus();
+		if( resultadoCEP["logradouro"] == "" ){
+	        $("#campoLogradouro").focus();
+		}else{
+	        $("#campoNumero").focus();
+		}
         //document.getElementById("load").style.display = 'none';
         //validate()
       }else{
@@ -59,6 +63,8 @@ function getEndereco() {
     //document.getElementById("load").style.display = 'none';
   }
 }
+
+
 
 $(function(){
 /* MUDA PESSOA */
@@ -75,7 +81,7 @@ $(function(){
     });
 /* / MUDA PESSOA */
 
-/* MENSAGEM */
+/* MENSAGEM /
     var carac = 200;
 
     $("#campoDescricao").keypress(function(){
@@ -91,4 +97,6 @@ $(function(){
 
     });
 /* / MENSAGEM */
+
+$("#guardaTipoPessoa label:eq(0) input").trigger("click");
 });

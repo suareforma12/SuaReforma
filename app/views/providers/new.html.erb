@@ -1,17 +1,22 @@
 <%= content_for :title do %> Cadastre-se - Sua Reforma <% end %>
 
+<%= content_for :metatags do %>
+    <meta name=”description” content="Faça orçamento para sua reforma ou construção no maior portal de reformas do Brasil." />
+    <meta name="keywords" content="reforma construção pintura acabamento construir alvenaria eletricidade gesso serralheria vidracaria hidraulica paisagismo reformar construir" />
+<% end %>
+
             <!-- HEADER -->
             <div id="header">
                 <div class="wrapper">
                     <div id="logo">
-                        <h1><%= link_to image_tag("logo.png", :alt => "Sua Reforma"), "/" %></h1>
+                        <h1><%= link_to image_tag("logo.png", :alt => "Sua Reforma"), "/", :title => "Sua Reforma" %></h1>
                     </div>
                 </div>
 
                 <div id="barraForm">
                     <div class="wrapper">
                         <div id="cadastreseForm">
-					   <%= image_tag "cadastre-se-interna.png", :alt => "Cadastre-se grátis" %>
+					   <%= image_tag "cadastre-se-interna.png", :alt => "Cadastre-se grátis", :title => "Cadastre-se" %>
                         </div>
                     </div>
                 </div>
@@ -34,6 +39,7 @@
                 $(".uniform").uniform();
                 $("#campoTelefone").mask("(99) 9999-9999");
                 $("#campoCep").mask("99999-999");
+                $('#campoDescricao').limit('200','#caracs');
             });
         </script>
         <!-- / JS -->

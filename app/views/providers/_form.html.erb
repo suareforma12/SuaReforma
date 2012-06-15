@@ -160,9 +160,9 @@
                                     <div id="descricao">
                                         <label for="campoDescricao"><span class="small">Descrição da empresa (máx 200 caracteres)</span></label>
                                         <div class="guardaInputT">
-                                            <%= f.text_area :description, :id => "campoDescricao", :maxlength => 200 %>
+                                            <%= f.text_area :description, :id => "campoDescricao" %>
                                         </div>
-                                        <span id="avisoDescricao">200 caracteres restantes</span>
+                                        <span id="avisoDescricao"><span id="caracs"></span> caracteres restantes</span>
                                     </div>
                                     <!-- / DESCRICAO -->
                                 </li>

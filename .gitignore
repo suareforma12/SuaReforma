@@ -4,3 +4,4 @@
 *.sw*
 *.*~
 config/database.yml
+/.webbynode/
