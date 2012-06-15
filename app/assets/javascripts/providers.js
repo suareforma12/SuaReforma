@@ -35,17 +35,21 @@ function getEndereco() {
    *  Estou chamando a url do serviço passando o parâmetro "formato=javascript" e o CEP digitado no formulário
    *  http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#cep").val()
    */
-    $.getScript("http://m.correios.com.br/movel/buscaCepConfirma.do?cep"+$("#campoCep").val(),function(){
+    $.getScript("http://cep.republicavirtual.com.br/web_cep.php?formato=javascript&cep="+$("#campoCep").val(),function(){
       // o getScript dá um eval no script, então é só ler!
       //Se o resultado for igual a 1
-      if(resultadoCEP["resultado"] && resultadoCEP["bairro"] != ""){
+      if(resultadoCEP["resultado"] ){
         // troca o valor dos elementos
         $("#campoLogradouro").val(unescape(resultadoCEP["tipo_logradouro"])+" "+unescape(resultadoCEP["logradouro"]));
 	//$("#bairro").val(unescape(resultadoCEP["bairro"]));
         $("#campoCidade").val(unescape(resultadoCEP["cidade"]));
         $("#campoEstado").val(unescape(resultadoCEP["uf"]));
         //$("#enderecoCompleto").show("slow");
-        $("#campoNumero").focus();
+		if( resultadoCEP["logradouro"] == "" ){
+	        $("#campoLogradouro").focus();
+		}else{
+	        $("#campoNumero").focus();
+		}
         //document.getElementById("load").style.display = 'none';
         //validate()
       }else{
@@ -59,6 +63,8 @@ function getEndereco() {
     //document.getElementById("load").style.display = 'none';
   }
 }
+
+
 
 $(function(){
 /* MUDA PESSOA */
