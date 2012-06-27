@@ -16,7 +16,7 @@
 
 <div id="content">
 			<div id="contentLeft">
-				<div id="oMaior">			
+				<div id="oMaior">
 
 <div>
   <h1 style="color:#fc0;">Cadastrados</h1>
@@ -24,8 +24,8 @@
     <p style="padding-bottom:15px; padding-right:20px; border-bottom:1px solid #ccc;">
 
       <%= image_tag p.logo.url :medium %>
-	 <br/>
-
+      <br/>
+      <strong>ID: </strong><%= p.id %><br />
       <strong>Tipo de Pessoa:</strong> <%= p.type_person %> <br/>
 	 <strong>CPF/CNPJ:</strong> <%= p.document %><br />
 	 <br />
@@ -58,13 +58,13 @@
 	<p>
 	  <strong style="color:#fc0;">Categorias cadastradas:</strong><br />
 	  <% @tasks.each do |c| %>
-	    <%= c.name %>, 
+	    <%= c.name %>,
 	  <% end %>
 	  <br /><br/>
 
 	  <strong style="color:#fc0;">Categorias Pendentes:</strong><br />
 	  <% @tasks_pending.each do |c| %>
-	    <%= c.name %>, 
+	    <%= c.name %>,
 	  <% end %>
 	</p>
 </div>

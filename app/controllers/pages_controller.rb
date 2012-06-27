@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  Time::DATE_FORMATS[:time] = "criado em %m, %b de %Y - %I:%M:%p"
+  Time::DATE_FORMATS[:time] = "%m, %b de %Y - %I:%M:%p"
+
   def home
   end
 
