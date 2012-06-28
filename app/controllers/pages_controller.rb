@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  Time::DATE_FORMATS[:time] = "%m, %b de %Y - %I:%M:%p"
+  #Time::DATE_FORMATS[:my_time] = "%d, %B de %Y - %I:%M:%p"
 
   def home
   end

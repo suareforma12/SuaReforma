@@ -16,6 +16,7 @@ end
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'thin'
   gem 'rspec-rails'
   #gem 'capybara'
 end

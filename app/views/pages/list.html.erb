@@ -1,74 +1,69 @@
 <%= content_for :title do %> Cadastrados - Sua Reforma <% end %>
 
 <%= content_for :metatags do %>
-    <meta name="robots" content="noindex, nofollow">
+  <meta name="robots" content="noindex, nofollow">
 <% end %>
 
 <!-- HEADER -->
-            <div id="header">
-                <div class="wrapper">
-                    <div id="logo">
-                        <%= link_to image_tag("logo.png", :alt => "Sua Reforma"), "/", :title => "Sua Reforma" %>
-                    </div>
-                </div>
-            </div>
-            <!-- / HEADER -->
+<div id="header">
+  <div class="wrapper">
+    <div id="logo">
+      <%= link_to image_tag("logo.png", :alt => "Sua Reforma"), "/", :title => "Sua Reforma" %>
+    </div>
+  </div>
+</div>
+<!-- / HEADER -->
 
 <div id="content">
-			<div id="contentLeft">
-				<div id="oMaior">
+  <div id="contentLeft">
+    <div id="oMaior">
 
-<div>
-  <h1 style="color:#fc0;">Cadastrados</h1>
-  <% @providers.each do |p| %>
-    <p style="padding-bottom:15px; padding-right:20px; border-bottom:1px solid #ccc;">
+      <div>
+        <h1 style="color:#fc0;">Cadastrados</h1>
+        <% @providers.each do |p| %>
+          <p style="padding-bottom:15px; padding-right:20px; border-bottom:1px solid #ccc;">
 
-      <%= image_tag p.logo.url :medium %>
-      <br/>
-      <strong>ID: </strong><%= p.id %><br />
-      <strong>Tipo de Pessoa:</strong> <%= p.type_person %> <br/>
-	 <strong>CPF/CNPJ:</strong> <%= p.document %><br />
-	 <br />
+            <%= image_tag p.logo.url :medium %>
+            <br/>
+            <strong>ID: </strong><%= p.id %><br />
+            <strong>Tipo de Pessoa:</strong> <%= p.type_person %> <br/>
+            <strong>CPF/CNPJ:</strong> <%= p.document %><br />
+            <br />
 
-      <strong>Nome:</strong> <%= p.name %><br/>
-	 <strong>Telefone:</strong> <%= p.phone %><br/>
-	 <strong>E-mail:</strong> <%= p.email %><br />
-	 <br/>
+            <strong>Nome:</strong> <%= p.name %><br/>
+            <strong>Telefone:</strong> <%= p.phone %><br/>
+            <strong>E-mail:</strong> <%= p.email %><br />
+            <br/>
 
-      <strong>Descrição:</strong><br/>
-	 <%= p.description %><br/>
-	 <br/>
+            <strong>Descrição:</strong><br/>
+            <%= p.description %><br/>
+            <br/>
 
-      <strong>Tipo de Serviço:</strong> <%= p.type_service %><br />
-	 <strong>Funções:</strong><br/>
-      <%= p.tasks.map { |t| t.name }.join ", " %><br/>
-	 <br/>
+            <strong>Tipo de Serviço:</strong> <%= p.type_service %><br />
+            <strong>Funções:</strong><br/>
+            <%= p.tasks.map { |t| t.name }.join ", " %><br/>
+            <br/>
 
-	 <strong>Endereço:</strong><br />
-      <%= p.adress.street %>, <strong>Nº:</strong> <%= p.adress.number %>, <strong>Comp:</strong> <%= p.adress.complement %><br />
-      <strong>CEP:</strong> <%= p.adress.cep %><br/>
-	 <strong>Cidade:</strong> <%= p.adress.city %>, <%= p.adress.state %><br />
-	 <br/>
+            <strong>Endereço:</strong><br />
+            <%= p.adress.street %>, <strong>Nº:</strong> <%= p.adress.number %>, <strong>Comp:</strong> <%= p.adress.complement %><br />
+            <strong>CEP:</strong> <%= p.adress.cep %><br/>
+            <strong>Cidade:</strong> <%= p.adress.city %>, <%= p.adress.state %><br />
+            <br/>
 
-	 <strong>Cadastro realizado em:</strong> <br/>
-      <%= p.created_at.to_s :time %>
-    </p>
-  <% end %>
+            <strong>Cadastro realizado:</strong> <br/>
+            <%= I18n.l(p.created_at) %>
+          </p>
+        <% end %>
 
-	<p>
-	  <strong style="color:#fc0;">Categorias cadastradas:</strong><br />
-	  <% @tasks.each do |c| %>
-	    <%= c.name %>,
-	  <% end %>
-	  <br /><br/>
-
-	  <strong style="color:#fc0;">Categorias Pendentes:</strong><br />
-	  <% @tasks_pending.each do |c| %>
-	    <%= c.name %>,
-	  <% end %>
-	</p>
-</div>
-
-</div>
-</div>
+        <p>
+          <strong style="color:#fc0;">Categorias cadastradas:</strong><br />
+          <%= @tasks.collect{|c| c.name }.join(", ") %>
+        </p>
+        <p>
+          <strong style="color:#fc0;">Categorias Pendentes:</strong><br />
+          <%= @tasks_pending.collect{|c| c.name }.join(", ") %>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
