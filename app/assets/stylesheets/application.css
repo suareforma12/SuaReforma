@@ -72,9 +72,19 @@ body{ background:#2a3642 url(bg-home.jpg) repeat-x center 0px; }
 #contentLeft #oMaior p{
     float:left;
     width:290px;
-    font-size:12px;
+    font-size:14px;
     color:#fff;
     padding:30px 0px 0px 45px;
+}
+
+#contentLeft #oMaior p #saibaMaisHome{
+	float:left;
+	display:inline;
+	margin:10px 0px 0px 0px;
+	font-size:14px;
+	color:#f81;
+	font-weight:bold;
+	text-decoration:underline;
 }
 
 #contentRight{
@@ -419,6 +429,20 @@ body{ background:#2a3642 url(bg-home.jpg) repeat-x center 0px; }
     float:left;
     width:300px;
     padding-left:220px;
+}
+
+#content.saibaMais #contentLeft #oMaior p{
+    font-family:"Arial";
+    color:#fff;
+    font-size:18px;
+    float:left;
+    width:430px;
+    padding-left:0px;
+}
+
+#content.saibaMais #contentLeft #oMaior a{
+	color:#fc0;
+	text-decoration:underline;
 }
 
 #content.obrigado #contentRight{
