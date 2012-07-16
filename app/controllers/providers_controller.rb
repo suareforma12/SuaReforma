@@ -48,10 +48,8 @@ class ProvidersController < ApplicationController
       if @provider.save
         @provider.new_tasks_pending Task.create_pending_tasks params[:new_tasks]
         @provider.save
-	
-				
-		
-	   Confirmacao.welcome(@provider.email).deliver
+
+	# Confirmacao.welcome(@provider.email).deliver
 
         format.html { redirect_to "/obrigado" }
         format.json { render json: @provider, status: :created, location: @provider }
