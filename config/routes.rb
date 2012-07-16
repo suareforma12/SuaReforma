@@ -4,6 +4,7 @@ SuaReforma::Application.routes.draw do
   controller :pages do
     get "/", :action => :home
     get "/obrigado", :action => :thank_you
+    get "/saiba-mais", :action => :more
   end
   controller :providers do
     get  "/cadastre-se", :action => :new,    :as => "new_provider"
