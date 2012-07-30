@@ -51,7 +51,19 @@ SuaReforma::Application.configure do
   config.assets.precompile += %w( application.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    :address              => 'smpt.gmail.com',
+    :port                 => 465,
+    :domain               => 'www.suareforma.com.br',
+    :openssl_verify_mode  => 'none',
+    :enable_starttls_auto => true,
+    :authentication       => :login,
+    :user_name            => 'seu-email@suareforma.com.br',
+    :password             => 'sua-senha'
+  }
 
   # Enable threaded mode
   # config.threadsafe!
