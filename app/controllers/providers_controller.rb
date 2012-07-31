@@ -48,7 +48,7 @@ class ProvidersController < ApplicationController
         # Pegando o id das tasks criadas no formulario
         new_task_ids = Task.create_pending_tasks(params[:new_tasks])
         # Associando os novos id's ao Provider
-        @provider.new_tasks_pending(new_tasks_ids)
+        @provider.new_tasks_pending(new_task_ids)
 
         # Envia email de confirmação para o Provider
         #
