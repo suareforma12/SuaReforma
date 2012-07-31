@@ -11,9 +11,14 @@ class Provider < ActiveRecord::Base
   validates_attachment_size :logo, :less_than => 3.megabyte
   validates_attachment_content_type :logo, :content_type => %w[image/png image/jpeg image/gif image/tiff]
 
+  # Adiciona o id das novas tasks
+  # criadas a partir do formulario
   def new_tasks_pending tasks
     tasks ||= []
     self.task_ids += tasks
+
+    # Salva a instancia apos adicionar as novas task's
+    self.save
   end
 
 end
