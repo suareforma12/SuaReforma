@@ -1,4 +1,3 @@
-
 class ProvidersController < ApplicationController
   # GET /providers
   # GET /providers.json
@@ -46,10 +45,15 @@ class ProvidersController < ApplicationController
 
     respond_to do |format|
       if @provider.save
-        @provider.new_tasks_pending Task.create_pending_tasks params[:new_tasks]
-        @provider.save
+        # Pegando o id das tasks criadas no formulario
+        new_task_ids = Task.create_pending_tasks(params[:new_tasks])
+        # Associando os novos id's ao Provider
+        @provider.new_tasks_pending(new_tasks_pending)
 
-	# Confirmacao.welcome(@provider.email).deliver
+        # Envia email de confirmação para o Provider
+        #
+        # Alterar FUTURAMENTE para uma fila
+	ProviderConfirmation.confirmacao(@provider).deliver
 
         format.html { redirect_to "/obrigado" }
         format.json { render json: @provider, status: :created, location: @provider }
