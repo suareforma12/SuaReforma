@@ -5,7 +5,6 @@ gem 'mysql2'
 gem 'paperclip'
 gem 'jquery-rails'
 
-
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -15,6 +14,9 @@ end
 
 group :development, :test do
   gem 'thin'
+  gem "pry", :require => false
+  gem "awesome_print", :require => false
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'sqlite3'
 end
