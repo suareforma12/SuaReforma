@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120610212413) do
+ActiveRecord::Schema.define(:version => 20120809011742) do
 
   create_table "adresses", :force => true do |t|
     t.string   "cep"
@@ -37,8 +37,9 @@ ActiveRecord::Schema.define(:version => 20120610212413) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.string   "approved",          :default => "N", :null => false
   end
 
   create_table "providers_tasks", :id => false, :force => true do |t|
@@ -51,6 +52,17 @@ ActiveRecord::Schema.define(:version => 20120610212413) do
     t.string   "pending",    :default => "S"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.string   "name"
+    t.string   "role"
+    t.integer  "provider_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end
