@@ -55,14 +55,17 @@ ActiveRecord::Schema.define(:version => 20120809011742) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email"
-    t.string   "password_hash"
-    t.string   "password_salt"
+    t.string   "email",                                 :null => false
+    t.string   "password_hash",                         :null => false
+    t.string   "password_salt",                         :null => false
     t.string   "name"
-    t.string   "role"
+    t.string   "role",          :default => "provider"
     t.integer  "provider_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
+  add_index "users", ["provider_id"], :name => "index_users_on_provider_id"
 
 end
