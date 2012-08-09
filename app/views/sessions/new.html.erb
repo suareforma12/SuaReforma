@@ -1,0 +1,21 @@
+<% content_for :title do %> Login Sua Reforma <% end %>
+
+<%= form_tag login_path do %>
+  <ul>
+    <li>
+      <span>Login</span>
+    </li>
+    <li class="warning">
+      <%= flash[:notice] %>
+    </li>
+    <li>
+      Email: <%= text_field_tag :email %>
+    </li>
+    <li>
+      Senha: <%= password_field_tag :password, '' %>
+    </li>
+    <li>
+      <%= submit_tag "Enviar" %>
+    </li>
+  </ul>
+<% end %>
